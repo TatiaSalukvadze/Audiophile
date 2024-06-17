@@ -1,0 +1,91 @@
+.threecat {
+    display: flex;
+    justify-content: space-between;
+    height: 284px;
+    margin: 200px auto 168px;
+}
+
+.threecat .p {
+    width: 32%;
+    height: 204px;
+    border-radius: 8px;
+    background-color: #F1F1F1;
+    position: relative;
+    /* added */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.p .pimg {
+    transform: translateY(-45%);
+    max-height: 260px;
+    max-width: 70%;
+}
+
+.p h3 {
+    padding-bottom: 15px;
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.286px;
+    text-transform: uppercase;
+}
+
+.alink {
+    position: absolute;
+    bottom: 30px;
+    right: 50%;
+    transform: translateX(50%);
+    /* added */
+    text-align: center;
+}
+
+.alink a {
+    color: #000;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.5;
+   
+}
+
+.alink a:hover {
+    color: #D87D4A;
+}
+
+@media (max-width:768px) {
+    .threecat {
+        height: 239px;
+        margin: 160px auto 96px;
+    }
+
+    .threecat .p {
+        height: 165px;
+    }
+
+    .p .pimg {
+        max-height: 160px;
+        max-width: 80%;
+    }
+
+    .alink {
+        bottom: 22px;
+    }
+}
+
+@media (max-width:565px) {
+    .threecat {
+        flex-direction: column;
+        gap: 98px;
+        align-items: center;
+        height: auto;
+        margin: 140px auto 108px;
+    }
+
+    .threecat .p {
+        width: 100%;
+    }
+}

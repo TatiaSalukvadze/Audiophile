@@ -1,0 +1,69 @@
+.otherswrap {
+    margin-top: 160px;
+    /* added */
+    text-align: center;
+}
+
+.otherswrap h1 {
+    color: #000;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 1.143px;
+    text-transform: uppercase;
+    padding-bottom: 64px;
+
+}
+
+.others {
+    width: 100%;
+    gap: 2%;
+    display: flex;
+}
+
+.others .o {
+    width: 32%;
+}
+
+.o img {
+    width: 100%;
+}
+
+.o h3 {
+    color: #000;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1.714px;
+    text-transform: uppercase;
+    padding: 40px 0 40px;
+}
+
+@media (max-width:650px) {
+    .o h3 {
+        font-size: 20px;
+    }
+
+    .o button {
+        width: 100%;
+    }
+}
+
+@media (max-width:565px) {
+    .o button {
+        width: 160px;
+    }
+
+    .others {
+        flex-direction: column;
+        gap: 56px;
+    }
+
+    .others .o {
+        width: 97%;
+    }
+
+    .o h3 {
+        padding: 32px 0 32px;
+    }
+}

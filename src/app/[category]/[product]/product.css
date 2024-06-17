@@ -1,0 +1,24 @@
+.goback {
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 79px;
+    padding-bottom: 56px;
+    height: 20px;
+    /* align-self:flex-start; */
+}
+
+.goback:hover {
+    cursor: pointer;
+}
+
+.product.cat-content {
+    padding-top: 0;
+    margin-bottom:0;
+}
+
+@media (max-width:768px) {
+    .goback {
+        min-height: 20px;
+    }
+}

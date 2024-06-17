@@ -1,0 +1,59 @@
+.calkep {
+    height: auto;
+}
+
+.price {
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.286px;
+    text-transform: uppercase;
+    opacity: 1;
+    padding-bottom: 47px;
+}
+
+.quant {
+    width: 120px;
+    height: 48px;
+    background: #F1F1F1;
+    margin-right: 16px;
+    color: #000;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.quant:hover {
+    background: #F1F1F1;
+}
+
+.sign {
+    opacity: 0.4;
+    font-size: 16px;
+    padding: 0px 8px;
+}
+
+.sign:hover {
+    cursor: pointer;
+}
+
+.qcount {
+    padding: 0px 20px;
+}
+
+.addcart {
+    color: #FFF;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+@media(max-width:950px) {
+    .quant {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,40 @@
+:root {
+    --gap: 32px;
+}
+
+.gallery {
+    display: flex;
+    gap: var(--gap, 3%);
+}
+
+.gallery img {
+    border-radius: 8px;
+}
+
+#inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    width: 40%;
+}
+
+.pg3 {
+    width: 57%;
+}
+
+
+@media (max-width:475px) {
+    .gallery {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #inner {
+        gap: 10px;
+    }
+
+    #inner,
+    .pg3 {
+        width: 97%;
+    }
+}

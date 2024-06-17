@@ -1,0 +1,123 @@
+.home,
+.headdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homehead {
+    height: 632px;
+    width: 100%;
+    background-image: url("../../../public/assets/home/desktop/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-color: #0E0E0E;
+    padding-top: 128px;
+    padding-left: 100px;
+}
+
+.headdiv {
+    width: 396px;
+    height: 360px;
+    text-align: left;
+}
+
+.homenewp {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    opacity: 0.4964;
+    padding-bottom: 24px;
+}
+
+.headdiv h1 {
+    color: #FFF;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 58px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-bottom: 24px;
+}
+
+.homedesc {
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 25px;
+    padding-bottom: 40px;
+}
+
+button {
+    width: 160px;
+    height: 48px;
+    background: #D87D4A;
+    border: 0;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: #FBAF85;
+    cursor: pointer;
+}
+
+.mainwrap {
+    width: 1110px;
+}
+
+@media (max-width:1200px) {
+    .mainwrap {
+        width: 90%;
+    }
+}
+
+@media (max-width:768px) {
+    .homehead {
+        height: 639px;
+        background-image: url("../../../public/assets/home/tablet/image-header.jpg");
+        background-size: cover;
+        padding-top: 126px;
+        padding-left: 0px;
+    }
+
+    .headdiv {
+        margin: 0 auto;
+        width: 379px;
+        height: 346px;
+        text-align: center;
+    }
+
+    .homedesc {
+        width: 349px;
+    }
+}
+
+@media (max-width:468px) {
+    .headdiv h1 {
+        font-size: 36px;
+        line-height: 40px;
+        letter-spacing: 1.286px;
+    }
+
+    .homedesc {
+        width: 328px;
+    }
+}
+
+@media (max-width:375px) {
+    .homehead {
+        height: 510px;
+        background-image: url("../../../public/assets/home/mobile/image-header.jpg");
+        padding-top: 108px;
+    }
+
+    .mainwrap {
+        width: 327px;
+    }
+}
