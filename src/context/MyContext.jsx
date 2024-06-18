@@ -6,7 +6,9 @@ export const MyContext = createContext();
 export const MyProvider = ({ children }) => {
   const [cartList, setcartList] = useState([]);
   const [count, setcount] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 800
+  );
 
   useEffect(() => {
     const handleResize = () => {
