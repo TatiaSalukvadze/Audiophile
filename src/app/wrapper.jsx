@@ -20,7 +20,7 @@ export default function Wrapper({ children }) {
   //   router.push("/home");
   // }, []);
   return (
-    <ClerkProvider>
+    <ClerkProvider frontendApi={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <html lang="en">
         <MyProvider>
           <body>
