@@ -1,0 +1,1 @@
+ALTER TABLE "orders_table" ALTER COLUMN "userId" SET DATA TYPE text;
