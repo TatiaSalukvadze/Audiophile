@@ -1,15 +1,17 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../../../../context/MyContext";
 import "./singlep.css";
-import im from "../../../../../public/assets/product-yx1-earphones/mobile/image-product.jpg";
+import { useAuth } from "@clerk/nextjs";
+import { getOrdersByUserIdAndProductId } from "../../../../db/queries";
 
 function Singlep({ p }) {
-  const { cartList, setcartList, imageSrcKey, count, setcount } =
-    useContext(MyContext);
-
+  const { userId } = useAuth();
+  const { cartList, setcartList, imageSrcKey } = useContext(MyContext);
+  const [count, setcount] = useState(0);
   useEffect(() => {
-    setcount(0);
-  }, [setcount]);
+    //if p in orders already check
+    console.log(getOrdersByUserIdAndProductId(userId, p.id));
+  }, []);
 
   function addToCart() {
     if (count <= 0) return;
