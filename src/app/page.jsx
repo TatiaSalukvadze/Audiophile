@@ -7,7 +7,7 @@ function page() {
   useEffect(() => {
     router.push("/home");
   }, []);
-  return <div>page</div>;
+  return <></>;
 }
 
 export default page;
