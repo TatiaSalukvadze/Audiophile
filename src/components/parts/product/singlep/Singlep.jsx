@@ -11,22 +11,26 @@ import {
 function Singlep({ p }) {
   const { userId } = useAuth();
   const { cartList, setcartList, imageSrcKey } = useContext(MyContext);
-  const [count, setcount] = useState(0);
+  const [count, setCount] = useState(0);
   const [isNew, setisNew] = useState(true);
   const [orderId, setorderId] = useState(0);
   useEffect(() => {
-    //if p in orders already check
-
     async function startwith() {
-      const orders = await getOrdersByUserIdAndProductId(userId, p.id);
-      if (orders.length > 0) {
-        setcount(orders[0].count);
-        setorderId(orders[0].id);
-        setisNew(false);
+      if (userId && p.id) {
+        try {
+          const orders = await getOrdersByUserIdAndProductId(userId, p.id);
+          if (orders.length > 0) {
+            setCount(orders[0].count);
+            setorderId(orders[0].id);
+            setisNew(false);
+          }
+        } catch (error) {
+          console.error("Error fetching orders:", error);
+        }
       }
     }
     startwith();
-  }, []);
+  }, [userId, p.id]);
 
   function addToCart() {
     if (count <= 0) return;

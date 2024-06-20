@@ -9,6 +9,8 @@ import Gallery from "../../../components/parts/product/gallery/Gallery";
 import Others from "../../../components/parts/product/others/Others";
 import ThreeCat from "../../../components/parts/home/threecat/ThreeCat";
 import "./product.css";
+import "../list.css";
+import "../../home/Home.css";
 
 function Product({ params }) {
   const { imageSrcKey } = useContext(MyContext);

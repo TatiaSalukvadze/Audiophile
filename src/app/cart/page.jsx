@@ -15,29 +15,35 @@ function Cart() {
   const [total, settotal] = useState(0);
   useEffect(() => {
     async function startwith() {
-      const orders = await getOrdersByUserId(userId);
-      if (orders.length > 0) {
-        setcartList(
-          orders.map((or) => {
-            const p = data.find((el) => el.id === or.productId);
-            return {
-              id: or.id,
-              name: p.name,
-              shortName: p.shortName,
-              price: p.price,
-              count: or.count,
-              image: p.image.mobile,
-              userId: or.userId,
-              productId: or.productId,
-            };
-          })
-        );
-      } else {
-        setcartList([]);
+      if (userId) {
+        try {
+          const orders = await getOrdersByUserId(userId);
+          if (orders.length > 0) {
+            setcartList(
+              orders.map((or) => {
+                const p = data.find((el) => el.id === or.productId);
+                return {
+                  id: or.id,
+                  name: p.name,
+                  shortName: p.shortName,
+                  price: p.price,
+                  count: or.count,
+                  image: p.image.mobile,
+                  userId: or.userId,
+                  productId: or.productId,
+                };
+              })
+            );
+          } else {
+            setcartList([]);
+          }
+        } catch (error) {
+          console.error("Error fetching orders:", error); // Error handling
+        }
       }
     }
     startwith();
-  }, []);
+  }, [userId]);
 
   useEffect(() => {
     const t = cartList.reduce((tot, c) => tot + c.price * c.count, 0);

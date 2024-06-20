@@ -14,7 +14,7 @@ const isProtectedRoute = createRouteMatcher(["/:category/:product"]); //addYourS
 
 export default clerkMiddleware((auth, req) => {
 
-  if (isProtectedRoute(req)) {
+  if (!auth().userId && isProtectedRoute(req)) {
   //  auth().protect();
   return NextResponse.redirect(new URL('/sign-in', req.url))
   }
