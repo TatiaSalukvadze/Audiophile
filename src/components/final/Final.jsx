@@ -6,7 +6,7 @@ function Final({ gt, cartList }) {
   return (
     <div className="final">
       <div className="thnk">
-        <img src={confirm} alt="confirm" />
+        <img src={confirm.src} alt="confirm" />
         <h1 id="h1">
           thank you <br /> for your order
         </h1>
@@ -15,7 +15,7 @@ function Final({ gt, cartList }) {
         <div className="grand-ttl">
           <div id="items">
             <div className="cart-item" key={cartList[0].name}>
-              <img src={cartList[0].image.mobile} alt="cref" id="gt-img" />
+              <img src={cartList[0].image} alt="cref" id="gt-img" />
               <div className="dp">
                 <span className="dp-t">{cartList[0].shortName}</span>
                 <span className="dp-p">${cartList[0].price}</span>

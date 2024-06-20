@@ -9,7 +9,7 @@ import "./Nav.css";
 import { useAuth, UserButton } from "@clerk/nextjs";
 function Nav() {
   const { isSignedIn } = useAuth();
-  console.log(isSignedIn);
+
   const menuref = useRef(null);
   // const [showcart, setshowcart] = useState(false);
 

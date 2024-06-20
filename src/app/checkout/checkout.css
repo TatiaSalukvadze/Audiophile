@@ -189,7 +189,9 @@ input[type="radio"] {
 }
 
 #bg {
-    top: 86px;
+    /* top: 86px; */
+    /* justify-self: center; */
+    margin:0 auto;
 }
 
 @media (max-width: 1050px) {

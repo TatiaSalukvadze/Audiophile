@@ -1,3 +1,4 @@
+"use server";
 import { db } from './index';
 import { InsertOrder, ordersTable, SelectOrder } from './schema';
 import { eq, sql } from 'drizzle-orm';
@@ -6,12 +7,26 @@ export async function createOrder(data: InsertOrder) {
   await db.insert(ordersTable).values(data);
 }
 
-export async function getOrdersByUserId(userId: string) {
+export async function getOrdersByUserId(userId: string) : Promise<
+  Array<{
+    id: number;
+    userId: string;
+    productId: number;
+    count: number;
+  }>
+> {
   const orders = await db.select().from(ordersTable).where(eq(ordersTable.userId, userId));
   return orders;
 }
 
-export async function getOrdersByUserIdAndProductId(userId: string, productId: number) {
+export async function getOrdersByUserIdAndProductId(userId: string, productId: number) : Promise<
+  Array<{
+    id: number;
+    userId: string;
+    productId: number;
+    count: number;
+  }>
+> {
   const orders = await db.select().from(ordersTable)
     .where(sql`${ordersTable.userId} = ${userId} and ${ordersTable.productId} = ${productId}`);
   

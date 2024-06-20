@@ -1,8 +1,8 @@
 .final {
     display: flex;
     justify-content: center;
-    position: relative;
-    top: 125px;
+    /* position: relative;
+    top: 125px; */
 }
 
 .thnk {

@@ -20,7 +20,6 @@ function Category({ params }) {
     .filter((product) => product.category === `${cat}`)
     .reverse();
 
-  console.log(pathname);
   return (
     <>
       {pathname === "/" + params.category && (

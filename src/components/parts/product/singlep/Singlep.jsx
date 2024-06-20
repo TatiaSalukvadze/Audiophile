@@ -2,28 +2,49 @@ import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../../../../context/MyContext";
 import "./singlep.css";
 import { useAuth } from "@clerk/nextjs";
-import { getOrdersByUserIdAndProductId } from "../../../../db/queries";
+import {
+  getOrdersByUserIdAndProductId,
+  createOrder,
+  updateOrder,
+} from "../../../../db/queries";
 
 function Singlep({ p }) {
   const { userId } = useAuth();
   const { cartList, setcartList, imageSrcKey } = useContext(MyContext);
   const [count, setcount] = useState(0);
+  const [isNew, setisNew] = useState(true);
+  const [orderId, setorderId] = useState(0);
   useEffect(() => {
     //if p in orders already check
-    console.log(getOrdersByUserIdAndProductId(userId, p.id));
+
+    async function startwith() {
+      const orders = await getOrdersByUserIdAndProductId(userId, p.id);
+      if (orders.length > 0) {
+        setcount(orders[0].count);
+        setorderId(orders[0].id);
+        setisNew(false);
+      }
+    }
+    startwith();
   }, []);
 
   function addToCart() {
     if (count <= 0) return;
-    let temp = cartList;
-    let item = p;
-    item.count = item.count ? item.count + count : count;
-    const ind = temp.findIndex((el) => el.id === p.id);
-    console.log(ind);
-    if (ind >= 0) temp[ind] = item;
-    else temp.push(item);
-    setcartList(temp);
-    setcount(0);
+    // let temp = cartList;
+    // let item = p;
+    // item.count = item.count ? item.count + count : count;
+    // const ind = temp.findIndex((el) => el.id === p.id);
+    // console.log(ind);
+    // if (ind >= 0) temp[ind] = item;
+    // else temp.push(item);
+    // setcartList(temp);
+    if (isNew) {
+      createOrder({ userId: userId, productId: p.id, count: count });
+      setisNew(false);
+    } else {
+      updateOrder(orderId, { userId: userId, productId: p.id, count: count });
+    }
+    // setcount(0);
   }
 
   return (
