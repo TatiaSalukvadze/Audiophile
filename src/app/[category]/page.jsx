@@ -44,9 +44,15 @@ function Category({ params }) {
                     {product.new ? <p className="np">NEW PRODUCT</p> : <></>}
                     <h1 className="title">{product.name}</h1>
                     <p className="pr-desc">{product.description}</p>
-                    <Link href={`/${params.category}/${product.slug}`}>
+                    {/* <Link href={`/${params.category}/${product.slug}`}>
                       <button>See Product</button>
-                    </Link>
+                    </Link> */}
+                    <div className="button-container-1">
+                      <span className="mas">See Product</span>
+                      <Link href={`/${params.category}/${product.slug}`}>
+                        <button c>See Product</button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))}

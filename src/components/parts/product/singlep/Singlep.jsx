@@ -59,7 +59,7 @@ function Singlep({ p }) {
         <h1 className="title">{p.name}</h1>
         <p className="pr-desc">{p.description}</p>
         <p className="price">$ {p.price}</p>
-        <div>
+        <div className="cartbs">
           <button className="quant">
             <span
               className="sign"
@@ -79,9 +79,15 @@ function Singlep({ p }) {
               +
             </span>
           </button>
-          <button className="addcart" onClick={() => addToCart()}>
+          {/* <button className="addcart" onClick={() => addToCart()}>
             ADD TO CART
-          </button>
+          </button> */}
+          <div className="cartb button-container-1">
+            <span className="cartb mas">See Product</span>
+            <button className="addcart" onClick={() => addToCart()}>
+              ADD TO CART
+            </button>
+          </div>
         </div>
       </div>
     </div>

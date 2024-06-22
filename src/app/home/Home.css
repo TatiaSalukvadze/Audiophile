@@ -63,7 +63,7 @@ button {
 }
 
 button:hover {
-    background: #FBAF85;
+    /* background: #FBAF85; */
     cursor: pointer;
 }
 

@@ -15,9 +15,15 @@ function Home() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Link href="/headphones/xx99-mark-two-headphones">
+          <div className="button-container-1">
+            <span className="mas">See Product</span>
+            <Link href="/headphones/xx99-mark-two-headphones">
+              <button>See Product</button>
+            </Link>
+          </div>
+          {/* <Link href="/headphones/xx99-mark-two-headphones">
             <button>See Product</button>
-          </Link>
+          </Link> */}
         </div>
       </div>
       <ThreeCat />

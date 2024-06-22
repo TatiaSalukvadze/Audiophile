@@ -18,7 +18,9 @@
 }
 
 @media (max-width:768px) {
-    .goback {
-        min-height: 20px;
+    .goback.preview {
+        min-height: 50px;
+        text-align:left;
     }
+    
 }

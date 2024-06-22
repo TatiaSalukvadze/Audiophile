@@ -121,14 +121,17 @@ function Cart() {
           <span className="total-price">${total}</span>
         </div>
         {cartList.length > 0 ? (
-          <Link href="/checkout">
-            <button
-              className="check-button"
+          <div className="checkoutb button-container-1">
+            <span className="checkoutb mas">checkout</span>
+            <Link href="/checkout">
+              <button
+              // className="check-button"
               // onClick={() => setIsModalOpen(!isModalOpen)}
-            >
-              checkout
-            </button>
-          </Link>
+              >
+                checkout
+              </button>
+            </Link>
+          </div>
         ) : (
           <></>
         )}

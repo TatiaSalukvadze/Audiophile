@@ -51,9 +51,25 @@
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+.cartbs{
+    display:flex;
+    gap:0px;
+}
+.cartb .button-container-1 {
+    margin:0;
+    border: 1px solid #D87D4A;
+}
 
+.cartb .mas {
+    color: #D87D4A;
+}
 @media(max-width:950px) {
     .quant {
         margin-bottom: 20px;
+    }
+}
+@media (max-width:768px) {
+    .cartbs{
+        justify-content: center;
     }
 }

@@ -162,7 +162,7 @@ input[type="radio"] {
     color: #d87d4a;
 }
 
-.pay {
+/* .pay {
     width: 100%;
     color: #fff;
     margin-top: 32px;
@@ -170,7 +170,7 @@ input[type="radio"] {
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-}
+} */
 
 .errors {
     color: #c35616;
@@ -192,6 +192,18 @@ input[type="radio"] {
     /* top: 86px; */
     /* justify-self: center; */
     margin:0 auto;
+}
+.payb.button-container-1 {
+    border: 1px solid #D87D4A;
+    width: 100%;
+    margin-top: 32px;
+
+
+}
+
+
+.payb.mas {
+    color: #D87D4A;
 }
 
 @media (max-width: 1050px) {

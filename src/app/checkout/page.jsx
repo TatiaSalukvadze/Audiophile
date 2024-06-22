@@ -332,13 +332,23 @@ function Checkout() {
               </span>
             </div>
 
-            <button
+            {/* <button
               form="my-form"
               className="pay"
               onClick={handleSubmit(onSubmit)}
             >
               Continue & pay
-            </button>
+            </button> */}
+            <div className="payb button-container-1">
+              <span className="payb mas">Continue & pay</span>
+              <button
+                form="my-form"
+                className="pay"
+                onClick={handleSubmit(onSubmit)}
+              >
+                Continue & pay
+              </button>
+            </div>
           </div>
         </>
       )}

@@ -91,6 +91,14 @@
     color: #FFF;
 }
 
+.info .button-container-1 {
+    
+    border: 1px solid #D87D4A;
+}
+.info .mas {
+    color: #D87D4A;
+}
+
 @media (max-width:1150px) {
     .np {
         margin-bottom: 10px;
@@ -121,11 +129,14 @@
         font-size: 13px;
     }
 
-    .product-list button {
+        .info > .button-container-1  {
         width: 120px;
         height: 38px;
         font-size: 10px;
     }
+        .info > .mas,.info >.button-container-1 button{
+            font-size:10px;
+        }
 }
 
 @media (max-width:850px) {
@@ -150,11 +161,13 @@
         font-size: 11px;
     }
 
-    .product-list button {
+        .info >.button-container-1  {
         width: 120px;
         height: 38px;
         font-size: 10px;
     }
+    
+
 }
 
 @media (max-width:768px) {
@@ -207,11 +220,17 @@
         font-size: 15px;
     }
 
-    .product-list button {
+        .info > .button-container-1 {
         width: 160px;
         height: 48px;
         font-size: 13px;
+        margin:0 auto;
     }
+                .info>.mas,
+                .info>.button-container-1 button {
+            font-size: 13px;
+        }
+        
 
     .id1 .listcatim {
         order: 1;
@@ -276,7 +295,7 @@
         line-height: 25px;
     }
 
-    .product-list button {
+        .info >.button-container-1 {
         width: 160px;
         height: 48px;
         font-size: 13px;

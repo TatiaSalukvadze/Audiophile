@@ -52,7 +52,7 @@
 }
 
 .seep {
-    width: 160px;
+    /* width: 160px;
     height: 48px;
     border: 0;
     text-align: center;
@@ -60,11 +60,11 @@
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    text-transform: uppercase; */
     margin-top: 40px;
 }
 
-.seep.blb {
+/* .seep.blb {
     background: #000;
     color: #fff;
 }
@@ -72,9 +72,18 @@
 .seep.blb:hover {
     background: #4c4c4c;
     cursor: pointer;
+} */
+.blb.button-container-1{
+    background: transparent;
+}
+.blb.button-container-1 button{
+    background: black;
+}
+.blb.mas{
+    color:black;
 }
 
-.seep.trb {
+/* .seep.trb {
     border: 1px solid #000;
     background: transparent;
 }
@@ -87,6 +96,23 @@
     background: #000;
     cursor: pointer;
     color: #fff;
+} */
+.trb.button-container-1 {
+    background: black;
+        color: white;
+        /* border: 1px solid #000; */
+    
+    
+}
+
+.trb.button-container-1 button {
+    background: rgb(230, 229, 229);
+        color: black;
+        /* border: 1px solid #000; */
+}
+
+.trb.mas {
+    color: white;
 }
 
 .hdiv2 {
