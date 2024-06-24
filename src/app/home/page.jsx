@@ -2,6 +2,7 @@ import Link from "next/link";
 import ThreeCat from "../../components/parts/home/threecat/ThreeCat";
 import Audioman from "../../components/parts/home/audioman/Audioman";
 import Homepics from "../../components/parts/home//homepics/Homepics";
+import SwiperC from "../../components/parts/home/swiperc/SwiperC";
 import "./Home.css";
 
 function Home() {
@@ -27,6 +28,7 @@ function Home() {
         </div>
       </div>
       <ThreeCat />
+      <SwiperC />
       <Homepics />
       <Audioman />
     </div>

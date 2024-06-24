@@ -6,6 +6,8 @@ export const MyContext = createContext();
 export const MyProvider = ({ children }) => {
   const [cartList, setcartList] = useState([]);
   const [count, setcount] = useState(0);
+  const [searchResults, setsearchResults] = useState([]);
+  const [searchTerm, setsearchTerm] = useState("");
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 800
   );
@@ -33,7 +35,17 @@ export const MyProvider = ({ children }) => {
 
   return (
     <MyContext.Provider
-      value={{ cartList, setcartList, imageSrcKey, count, setcount }}
+      value={{
+        cartList,
+        setcartList,
+        imageSrcKey,
+        count,
+        setcount,
+        searchResults,
+        setsearchResults,
+        searchTerm,
+        setsearchTerm,
+      }}
     >
       {children}
     </MyContext.Provider>

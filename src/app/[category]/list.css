@@ -86,16 +86,29 @@
     font-weight: 500;
     line-height: 25px;
 }
-
+        .price {
+            color: #000;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1.286px;
+            text-transform: uppercase;
+            opacity: 1;
+            padding-bottom: 47px;
+        }
+        #sortb{
+            display:flex;
+            justify-content: start;
+            margin-bottom:20px;
+        }
 .product-list a {
     color: #FFF;
 }
 
-.info .button-container-1 {
+.info  .button-container-1 {
     
     border: 1px solid #D87D4A;
 }
-.info .mas {
+.info  .mas {
     color: #D87D4A;
 }
 
@@ -128,15 +141,15 @@
         margin-bottom: 25px;
         font-size: 13px;
     }
-
-        .info > .button-container-1  {
-        width: 120px;
-        height: 38px;
-        font-size: 10px;
+    
+        .info > .button-container-1,.info > button  {
+        width: 160px;
+            height: 48px;
+        /* font-size: 10px; */
     }
-        .info > .mas,.info >.button-container-1 button{
+        /* .info > .mas,.info >.button-container-1 button{
             font-size:10px;
-        }
+        } */
 }
 
 @media (max-width:850px) {
@@ -161,11 +174,11 @@
         font-size: 11px;
     }
 
-        .info >.button-container-1  {
+        /* .info >.button-container-1  {
         width: 120px;
         height: 38px;
         font-size: 10px;
-    }
+    } */
     
 
 }
@@ -221,15 +234,15 @@
     }
 
         .info > .button-container-1 {
-        width: 160px;
+        /* width: 160px;
         height: 48px;
-        font-size: 13px;
+        font-size: 13px; */
         margin:0 auto;
     }
-                .info>.mas,
+                /* .info>.mas,
                 .info>.button-container-1 button {
             font-size: 13px;
-        }
+        } */
         
 
     .id1 .listcatim {
@@ -295,11 +308,11 @@
         line-height: 25px;
     }
 
-        .info >.button-container-1 {
+        /* .info >.button-container-1 {
         width: 160px;
         height: 48px;
         font-size: 13px;
-    }
+    } */
 
     .id1 .listcatim {
         order: 1;

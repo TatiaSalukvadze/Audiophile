@@ -1,0 +1,41 @@
+.searchRes {
+  min-height: 50vh;
+  margin: 0 auto;
+  padding-top: 150px;
+}
+.searchRes h1{
+    text-transform: capitalize;
+}
+.searchRes h1 span {
+  text-transform: initial;
+}
+.sProducts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 50px;
+  justify-content: space-around;
+  padding-bottom: 100px;
+}
+.sProduct {
+  width: 300px;
+  padding-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 8px;
+  /* background: #0E0E0E; */
+}
+.sProduct h2 {
+  padding: 7px;
+  text-align:center;
+}
+.sProduct p {
+  color: #0E0E0E;
+  display: flex;
+  justify-content: center;
+  opacity:1;
+}
+#sPimg {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

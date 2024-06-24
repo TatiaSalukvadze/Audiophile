@@ -67,7 +67,7 @@ button:hover {
     cursor: pointer;
 }
 
-.mainwrap {
+/* .mainwrap {
     width: 1110px;
 }
 
@@ -75,7 +75,7 @@ button:hover {
     .mainwrap {
         width: 90%;
     }
-}
+} */
 
 @media (max-width:768px) {
     .homehead {
@@ -117,7 +117,7 @@ button:hover {
         padding-top: 108px;
     }
 
-    .mainwrap {
+    /* .mainwrap {
         width: 327px;
-    }
+    } */
 }

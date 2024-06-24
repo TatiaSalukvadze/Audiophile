@@ -31,9 +31,134 @@ button:hover {
     cursor: pointer;
 }
 
+.searchBar{
+    display:flex;
+    /* padding: 16px 24px; */
+    padding: 0 100px;
+    background-color: #0e0e0e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* flex px-[16px] py-[24px] sm: px-[32px] md:pt-[64px] md:px-[20px] */
+}
+.forBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+
+}
+.searchInput{
+    appearance: none;
+        border: none;
+        background: transparent;
+        outline: none;
+        width: 80vw;
+        padding-left: 16px;
+        color: white;
+}
+
+.mainwrap {
+    width: 1110px;
+}
+
+@media (max-width:1200px) {
+    .mainwrap {
+        width: 90%;
+    }
+}
+@media (max-width:375px) {
+
+    .mainwrap {
+        width: 327px;
+    }
+}
+/* h1 style */
+h1 {
+    color: #000;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 1.429px;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+}
+
+h1 span {
+    color: #d87d4a;
+}
+
+@media (max-width:575px) {
 
 
+    h1 {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+}
+/* search bar styles */
+.searchBox {
+    position: absolute;
+    top:100px;
+    left:150px;
+    /* top: 50%;
+    left: 50%; */
+    transform: translate(-50%, 50%);
+    background: #0E0E0E;
+    height: 50px;
+    border-radius: 50px;
+    /* padding: 10px; */
 
+}
+
+.searchBox:hover>.searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+/* .searchBox:hover>.searchButton {
+    background: white;
+    color: #2f3640;
+} */
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #0E0E0E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    box-shadow: rgb(216, 125, 74) 0px 10px 20px, rgb(216, 125, 80) 0px 6px 6px;
+}
+
+.searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    /* float: left; */
+    position:relative;
+    top:50%;
+    left:5px;
+    transform: translateY(-50%);
+    padding: 0;
+    /* margin:3px; */
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+
+@media screen and (max-width: 620px) {
+    .searchBox:hover>.searchInput {
+        width: 150px;
+        padding: 0 6px;
+    }
+}
+/* button hover effects */
 
 .button-container-1{
     position: relative;

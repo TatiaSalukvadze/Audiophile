@@ -4,9 +4,8 @@ import "./globals.css";
 import { MyProvider } from "../context/MyContext";
 import Nav from "../components/nav/Nav";
 import Footer from "../components/footer/Footer";
+import Search from "../components/search/Search";
 import ScrollToTop from "../components/ScrollToTop";
-// import { useRouter } from "next/navigation";
-// import { useEffect } from "react";
 
 import { ClerkProvider } from "@clerk/nextjs";
 // export const metadata = {
@@ -15,10 +14,6 @@ import { ClerkProvider } from "@clerk/nextjs";
 // };
 
 export default function Wrapper({ children }) {
-  // const router = useRouter();
-  // useEffect(() => {
-  //   router.push("/home");
-  // }, []);
   return (
     <ClerkProvider frontendApi={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <html lang="en">
@@ -26,6 +21,19 @@ export default function Wrapper({ children }) {
           <body>
             <ScrollToTop />
             <Nav />
+            <Search />
+            {/* <div className="searchBar">
+              <div className="forBottom">
+                <img src={search.src} alt="search" onClick={() => find()} />
+                <input
+                  type="text"
+                  placeholder="Search for products"
+                  className="searchInput"
+                  ref={inputw}
+                />
+              </div> 
+  </div>*/}
+
             {children}
             <Footer />
           </body>

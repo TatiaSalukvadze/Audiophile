@@ -83,7 +83,7 @@ function Singlep({ p }) {
             ADD TO CART
           </button> */}
           <div className="cartb button-container-1">
-            <span className="cartb mas">See Product</span>
+            <span className="cartb mas">ADD TO CART</span>
             <button className="addcart" onClick={() => addToCart()}>
               ADD TO CART
             </button>
