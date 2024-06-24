@@ -5,7 +5,7 @@ import "./searchRes.css";
 import oval from "../../../public/assets/shared/desktop/Oval.svg";
 
 function page() {
-  const { searchResults, searchTerm, imageSrcKey } = useContext(MyContext);
+  const { searchResults, searchTerm } = useContext(MyContext);
   if (searchResults.length === 0) {
     return (
       <div className="mainwrap searchRes ">
@@ -34,9 +34,7 @@ function page() {
                 {el.category} &nbsp; <img src={oval.src} /> &nbsp;{" "}
                 {el.shortName} &nbsp; <img src={oval.src} /> &nbsp; ${el.price}
               </p>
-              <h2 className="text-sm text-white font-medium pb-[16px] sm:text-lg">
-                {el.name}
-              </h2>
+              <h2>{el.name}</h2>
             </div>
           ))}
         </div>
