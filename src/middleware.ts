@@ -10,7 +10,7 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse} from 'next/server'
 
-const isProtectedRoute = createRouteMatcher(["/:category/:product"]); //addYourSpecificRoutesInHereInTheFormOfAnArrayElement
+const isProtectedRoute = createRouteMatcher(["/:category/:product","/admin","/admin/dashboard"]); //addYourSpecificRoutesInHereInTheFormOfAnArrayElement
 
 export default clerkMiddleware((auth, req) => {
 

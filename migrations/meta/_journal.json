@@ -15,6 +15,13 @@
       "when": 1718817129372,
       "tag": "0001_illegal_king_cobra",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1719409111254,
+      "tag": "0002_cooing_celestials",
+      "breakpoints": true
     }
   ]
 }

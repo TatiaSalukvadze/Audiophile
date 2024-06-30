@@ -4,7 +4,7 @@ import search from "../../../public/assets/shared/desktop/icon-search.svg";
 import data from "../../data.json";
 import { MyContext } from "../../context/MyContext";
 
-function Search() {
+function Search({ role }) {
   const { setsearchResults, setsearchTerm } = useContext(MyContext);
   const router = useRouter();
   const inputw = useRef(null);
@@ -38,20 +38,25 @@ function Search() {
       inputw.current.value = "";
     }
   }
-  return (
-    <div className="searchBox">
-      <input
-        className="searchInput"
-        type="text"
-        name=""
-        placeholder="Search..."
-        ref={inputw}
-      />
-      <button className="searchButton" onClick={() => find()}>
-        <img src={search.src} alt="search" />
-      </button>
-    </div>
-  );
+  if (role != "admin") {
+    return (
+      <span id="searchwrap">
+        <div className="searchBox">
+          <input
+            className="searchInput"
+            type="text"
+            name=""
+            placeholder="Search..."
+            ref={inputw}
+          />
+          <button className="searchButton" onClick={() => find()}>
+            <img src={search.src} alt="search" />
+          </button>
+        </div>
+      </span>
+    );
+  }
+  return <></>;
 }
 
 export default Search;

@@ -7,7 +7,7 @@ import Link from "next/link";
 // import Cart from "../cart/Cart";
 import "./Nav.css";
 import { useAuth, UserButton } from "@clerk/nextjs";
-function Nav() {
+function Nav({ role }) {
   const { isSignedIn } = useAuth();
 
   const menuref = useRef(null);
@@ -20,27 +20,6 @@ function Nav() {
   function hidemenu() {
     menuref.current.classList.add("hide");
   }
-
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-  // const modalRef = useRef();
-
-  // useEffect(() => {
-  //   // Define a function to close the modal
-  //   console.log("not ours" + modalRef.current);
-
-  //   const listener = (e) => {
-  //     if (!modalRef.current || modalRef.current.contains(e.target)) {
-  //       return;
-  //     }
-  //     setIsModalOpen(false);
-  //   };
-  //   document.addEventListener("mousedown", listener);
-  //   document.addEventListener("touchstart", listener);
-  //   return () => {
-  //     document.removeEventListener("mousedown", listener);
-  //     document.removeEventListener("touchstart", listener);
-  //   };
-  // }, []);
 
   return (
     <div className="nav">
@@ -55,32 +34,57 @@ function Nav() {
         </div>
         <span className="linkwrap hide" ref={menuref}>
           <img src={close.src} className="close" onClick={() => hidemenu()} />
-          <div className="links">
-            <Link className="link" href="/home" onClick={() => hidemenu()}>
-              Home
-            </Link>
-            <Link
-              className="link"
-              href="/headphones"
-              onClick={() => hidemenu()}
-            >
-              headphones
-            </Link>
-            <Link className="link" href="/speakers" onClick={() => hidemenu()}>
-              speakers
-            </Link>
-            <Link className="link" href="/earphones" onClick={() => hidemenu()}>
-              earphones
-            </Link>
-          </div>
+          {role === "user" ? (
+            <div className="links">
+              <Link className="link" href="/home" onClick={() => hidemenu()}>
+                Home
+              </Link>
+              <Link
+                className="link"
+                href="/headphones"
+                onClick={() => hidemenu()}
+              >
+                headphones
+              </Link>
+              <Link
+                className="link"
+                href="/speakers"
+                onClick={() => hidemenu()}
+              >
+                speakers
+              </Link>
+              <Link
+                className="link"
+                href="/earphones"
+                onClick={() => hidemenu()}
+              >
+                earphones
+              </Link>
+            </div>
+          ) : (
+            <div className="links">
+              <Link
+                className="link"
+                href="/admin/dashboard"
+                onClick={() => hidemenu()}
+              >
+                Dashboard
+              </Link>
+            </div>
+          )}
         </span>
         <span>
           {isSignedIn ? (
             <>
-              {" "}
-              <Link className="link" href="/cart">
-                <img src={cart.src} className="cart" />
-              </Link>
+              {role !== "admin" ? (
+                <>
+                  <Link className="link" href="/cart">
+                    <img src={cart.src} className="cart" />
+                  </Link>
+                </>
+              ) : (
+                <></>
+              )}
               <span id="userButton">
                 <UserButton afterSignOutUrl="/home" />
               </span>

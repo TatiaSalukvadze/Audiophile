@@ -4,7 +4,7 @@ import { MyContext } from "../../context/MyContext";
 import { useForm, Controller } from "react-hook-form";
 import Final from "../../components/final/Final";
 import "./checkout.css";
-import { updateOrder, getOrdersByUserId, deleteOrder } from "../../db/queries";
+import { deleteCartItem, createOrder } from "../../db/queries";
 
 function Checkout() {
   const { cartList, setcartList } = useContext(MyContext);
@@ -26,7 +26,12 @@ function Checkout() {
     setShowFinal(!showFinal);
     if (Array.isArray(cartList) && cartList.length > 0) {
       for (const or of cartList) {
-        await deleteOrder(or.id); // Await each delete operation
+        await deleteCartItem(or.id); // Await each delete operation
+        await createOrder({
+          userId: or.userId,
+          productId: or.productId,
+          count: or.count,
+        });
       }
     }
   };

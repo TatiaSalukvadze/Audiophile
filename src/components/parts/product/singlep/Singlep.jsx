@@ -3,14 +3,14 @@ import { MyContext } from "../../../../context/MyContext";
 import "./singlep.css";
 import { useAuth } from "@clerk/nextjs";
 import {
-  getOrdersByUserIdAndProductId,
-  createOrder,
-  updateOrder,
+  getCartItemsByUserIdAndProductId,
+  createCartItem,
+  updateCartItem,
 } from "../../../../db/queries";
 
 function Singlep({ p }) {
   const { userId } = useAuth();
-  const { cartList, setcartList, imageSrcKey } = useContext(MyContext);
+  const { imageSrcKey } = useContext(MyContext);
   const [count, setCount] = useState(0);
   const [isNew, setisNew] = useState(true);
   const [orderId, setorderId] = useState(0);
@@ -18,7 +18,7 @@ function Singlep({ p }) {
     async function startwith() {
       if (userId && p.id) {
         try {
-          const orders = await getOrdersByUserIdAndProductId(userId, p.id);
+          const orders = await getCartItemsByUserIdAndProductId(userId, p.id);
           if (orders.length > 0) {
             setCount(orders[0].count);
             setorderId(orders[0].id);
@@ -43,10 +43,14 @@ function Singlep({ p }) {
     // else temp.push(item);
     // setcartList(temp);
     if (isNew) {
-      createOrder({ userId: userId, productId: p.id, count: count });
+      createCartItem({ userId: userId, productId: p.id, count: count });
       setisNew(false);
     } else {
-      updateOrder(orderId, { userId: userId, productId: p.id, count: count });
+      updateCartItem(orderId, {
+        userId: userId,
+        productId: p.id,
+        count: count,
+      });
     }
     // setcount(0);
   }
@@ -64,7 +68,7 @@ function Singlep({ p }) {
             <span
               className="sign"
               onClick={() => {
-                if (count > 0) setcount(count - 1);
+                if (count > 0) setCount(count - 1);
               }}
             >
               -
@@ -73,7 +77,7 @@ function Singlep({ p }) {
             <span
               className="sign"
               onClick={() => {
-                setcount(count + 1);
+                setCount(count + 1);
               }}
             >
               +

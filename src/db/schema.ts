@@ -1,6 +1,6 @@
-import { integer, pgTable, serial, text } from 'drizzle-orm/pg-core';
+import { integer, pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
 
-export const ordersTable = pgTable('orders_table', {
+export const cartTable = pgTable('cart_table', {
   id: serial('id').primaryKey(),
   userId: text('userId').notNull(),
   productId: integer('productId').notNull(),
@@ -9,7 +9,19 @@ export const ordersTable = pgTable('orders_table', {
 
 
 
-export type InsertOrder = typeof ordersTable.$inferInsert;
-export type SelectOrder = typeof ordersTable.$inferSelect;
+export type InsertCartItem = typeof cartTable.$inferInsert;
+export type SelectCartItem = typeof cartTable.$inferSelect;
+
+export const orderTable = pgTable('order_table', {
+  id: serial('id').primaryKey(),
+  userId: text('userId').notNull(),
+  productId: integer('productId').notNull(),
+   count: integer('count').notNull(),
+   createdAt: timestamp('created_at').notNull().defaultNow()
+});
+
+export type InsertOrder = typeof orderTable.$inferInsert;
+export type SelectOrder = typeof orderTable.$inferSelect;
+
 
 

@@ -5,7 +5,11 @@ import Link from "next/link";
 import "./cart.css";
 import "../../components/parts/product/singlep/singlep.css";
 import { useAuth } from "@clerk/nextjs";
-import { updateOrder, getOrdersByUserId, deleteOrder } from "../../db/queries";
+import {
+  updateCartItem,
+  getCartItemsByUserId,
+  deleteCartItem,
+} from "../../db/queries";
 import data from "../../data.json";
 
 function Cart() {
@@ -17,7 +21,7 @@ function Cart() {
     async function startwith() {
       if (userId) {
         try {
-          const orders = await getOrdersByUserId(userId);
+          const orders = await getCartItemsByUserId(userId);
           if (orders.length > 0) {
             setcartList(
               orders.map((or) => {
@@ -61,9 +65,9 @@ function Cart() {
       updCart[index].count -= 1;
       if (updCart[index].count === 0) {
         updCart.splice(index, 1);
-        deleteOrder(el.id);
+        deleteCartItem(el.id);
       } else {
-        updateOrder(el.id, updObj);
+        updateCartItem(el.id, updObj);
       }
       setcartList(updCart);
     }
@@ -77,7 +81,7 @@ function Cart() {
     };
     const updCart = [...cartList];
     updCart[index].count += 1;
-    updateOrder(el.id, updObj);
+    updateCartItem(el.id, updObj);
     setcartList(updCart);
   };
 

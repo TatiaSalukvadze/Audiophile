@@ -24,6 +24,9 @@
   border-radius: 8px;
   /* background: #0E0E0E; */
 }
+.sProduct:hover{
+  cursor: pointer;
+}
 .sProduct h2 {
   padding: 7px;
   text-align:center;

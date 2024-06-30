@@ -1,5 +1,6 @@
 import "./globals.css";
 import Wrapper from "./wrapper";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata = {
   title: "Audiophile",
@@ -7,11 +8,11 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  // const router = useRouter();
-  // useEffect(() => {
-  //   router.push("/home");
-  // }, []);
-  return <Wrapper children={children} />;
+  return (
+    <ClerkProvider frontendApi={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+      <Wrapper children={children} />
+    </ClerkProvider>
+  );
 }
 
 // "use client";
