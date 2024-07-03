@@ -69,3 +69,7 @@ export async function updateCartItem(id: SelectCartItem['id'], data: Partial<Omi
 export async function deleteCartItem(id: SelectCartItem['id']) {
   await db.delete(cartTable).where(eq(cartTable.id, id));
 }
+
+export async function deleteOrder(id: SelectOrder['id']) {
+  await db.delete(orderTable).where(eq(orderTable.id, id));
+}

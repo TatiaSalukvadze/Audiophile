@@ -70,6 +70,20 @@ function Nav({ role }) {
               >
                 Dashboard
               </Link>
+              <Link
+                className="link"
+                href="/admin/users"
+                onClick={() => hidemenu()}
+              >
+                Users
+              </Link>
+              <Link
+                className="link"
+                href="/admin/orders"
+                onClick={() => hidemenu()}
+              >
+                Orders
+              </Link>
             </div>
           )}
         </span>

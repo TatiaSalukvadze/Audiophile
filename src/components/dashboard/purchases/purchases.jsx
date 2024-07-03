@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./purchases.css";
+import "./purchases.css";
 import products from "../../../data.json";
 
 const Purchases = ({ orders, users }) => {
@@ -24,11 +24,6 @@ const Purchases = ({ orders, users }) => {
             const user = users.find((u) => u.id === or.userId) || users[0];
             const p = products.find((product) => product.id === or.productId);
 
-            // const date = or.createdAt
-            //   .toString()
-            //   .split("")
-            //   .slice(0, 10)
-            //   .join("");
             const createdAt = new Date(or.createdAt);
             const year = createdAt.getFullYear();
             const month = String(createdAt.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so we add 1

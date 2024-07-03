@@ -7,6 +7,7 @@ import products from "../../../../data.json";
 import Purchases from "../../../../components/dashboard/purchases/purchases";
 import BarChart from "../../../../components/dashboard/barChart/barChart";
 import LineChart from "../../../../components/dashboard/lineChart/lineChart";
+import { Users } from "../../actions";
 
 export default async function AdminDashboard() {
   const { sessionClaims } = auth();
@@ -16,17 +17,16 @@ export default async function AdminDashboard() {
     redirect("/home");
   }
 
-  async function Users() {
-    try {
-      const { data } = await clerkClient.users.getUserList();
-      // console.log(data);
-      return data ? data : [];
-    } catch (error) {
-      console.error("Error fetching users:", error); // Error handling
-    }
-  }
+  // async function Users() {
+  //   try {
+  //     const { data } = await clerkClient.users.getUserList();
+  //     // console.log(data);
+  //     return data ? data : [];
+  //   } catch (error) {
+  //     console.error("Error fetching users:", error); // Error handling
+  //   }
+  // }
   const users = await Users();
-
   async function Orders() {
     try {
       const ords = await getOrders();

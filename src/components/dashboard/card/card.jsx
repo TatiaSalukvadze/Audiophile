@@ -1,9 +1,10 @@
 // import { MdSupervisedUserCircle } from "react-icons/md";
 import "./card.css";
+import Link from "next/link";
 
 function card({ item }) {
   return (
-    <a href={`#${item.jump}`} className="carda">
+    <Link href={`/admin/${item.jump}`} className="carda">
       <div className="card">
         {/* <MdSupervisedUserCircle size={24} /> */}
         <div className="ctexts">
@@ -17,7 +18,7 @@ function card({ item }) {
         </span> */}
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 
