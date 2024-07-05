@@ -36,7 +36,7 @@ function Checkout() {
           });
         })
       );
-      // After operations complete successfully, proceed with sending email
+      // after operations complete successfully, proceed with sending email
       const messageId = await sendOrderConfirmation(
         email.current.value,
         cartList,
