@@ -1,10 +1,11 @@
 "use client";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { MyContext } from "../../context/MyContext";
 import { useForm, Controller } from "react-hook-form";
 import Final from "../../components/final/Final";
 import "./checkout.css";
 import { deleteCartItem, createOrder } from "../../db/queries";
+import { sendOrderConfirmation } from "./handleOrder";
 
 function Checkout() {
   const { cartList, setcartList } = useContext(MyContext);
@@ -13,6 +14,7 @@ function Checkout() {
   const [selectedPayment, setSelectedPayment] = useState("e-money");
   const [summ, setsumm] = useState([0, 0, 0, 0]);
   const [showFinal, setShowFinal] = useState(false);
+  const email = useRef(null);
 
   useEffect(() => {
     let t = cartList.reduce((tot, c) => tot + c.price * c.count, 0);
@@ -23,16 +25,28 @@ function Checkout() {
   }, [cartList]);
 
   const onSubmit = async () => {
-    setShowFinal(!showFinal);
-    if (Array.isArray(cartList) && cartList.length > 0) {
-      for (const or of cartList) {
-        await deleteCartItem(or.id); // Await each delete operation
-        await createOrder({
-          userId: or.userId,
-          productId: or.productId,
-          count: or.count,
-        });
-      }
+    try {
+      await Promise.all(
+        cartList.map(async (or) => {
+          await deleteCartItem(or.id);
+          await createOrder({
+            userId: or.userId,
+            productId: or.productId,
+            count: or.count,
+          });
+        })
+      );
+      // After operations complete successfully, proceed with sending email
+      const messageId = await sendOrderConfirmation(
+        email.current.value,
+        cartList,
+        summ[3]
+      );
+      console.log("Order confirmation email sent with ID:", messageId);
+      setShowFinal(!showFinal); // Optionally update UI state
+    } catch (error) {
+      console.error("Error processing order:", error);
+      // Handle error scenario appropriately (e.g., show error message to user)
     }
   };
 
@@ -80,6 +94,7 @@ function Checkout() {
                           type="email"
                           placeholder="alexei@gmail.com"
                           {...field}
+                          ref={email}
                         />
                       </label>
                     )}

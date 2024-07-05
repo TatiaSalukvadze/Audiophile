@@ -1,5 +1,5 @@
 "use client";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { MyContext } from "../../context/MyContext";
 //import { Outlet, useOutletContext, NavLink } from "react-router-dom";
 import ThreeCat from "../../components/parts/home/threecat/ThreeCat";
@@ -12,8 +12,8 @@ import { usePathname } from "next/navigation";
 
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
+// import FormControl from "@mui/material/FormControl";
+// import InputLabel from "@mui/material/InputLabel";
 
 function Category({ params }) {
   const pathname = usePathname(); //window.location.pathname;
@@ -33,7 +33,35 @@ function Category({ params }) {
     } else if (type === "high") {
       setproducts(temp.sort((p1, p2) => p2.price - p1.price));
     }
-    console.log(products);
+  };
+  const [minVal, maxVal] = [1, 5000];
+  const [currentMinVal, setcurrentMinVal] = useState(1);
+  const [currentMaxVal, setcurrentMaxVal] = useState(5000);
+  const onMinSliderChange = (e) => {
+    const value = Math.min(Number(e.target.value), currentMaxVal - 1);
+    setcurrentMinVal(value);
+  };
+
+  const onMaxSliderChange = (e) => {
+    const value = Math.max(Number(e.target.value), currentMinVal + 1);
+    setcurrentMaxVal(value);
+  };
+  const apply = () => {
+    const filteredProducts = productData.filter(
+      (product) =>
+        product.category === `${cat}` &&
+        product.price >= currentMinVal &&
+        product.price <= currentMaxVal
+    );
+
+    // Apply sorting if a sort type is selected
+    if (sorting === "low") {
+      filteredProducts.sort((p1, p2) => p1.price - p2.price);
+    } else if (sorting === "high") {
+      filteredProducts.sort((p1, p2) => p2.price - p1.price);
+    }
+
+    setproducts(filteredProducts);
   };
   return (
     <>
@@ -44,15 +72,43 @@ function Category({ params }) {
           </div>
 
           <div className="cat-content">
-            <span id="sortb" className="mainwrap">
-              <Select value={sorting} onChange={handleChange}>
-                <MenuItem value=" " disabled>
-                  <em>Select Sorting Type</em>
-                </MenuItem>
-                <MenuItem value="low">Price Low to High</MenuItem>
-                <MenuItem value="high">Price High to Low</MenuItem>
-              </Select>
-            </span>
+            <div className="searchbar mainwrap">
+              <span>
+                <Select value={sorting} onChange={handleChange}>
+                  <MenuItem value=" " disabled>
+                    <em>Select Sorting Type</em>
+                  </MenuItem>
+                  <MenuItem value="low">Price Low to High</MenuItem>
+                  <MenuItem value="high">Price High to Low</MenuItem>
+                </Select>
+              </span>
+              <span className="slidervDiv">
+                <label htmlFor="a">{currentMinVal}</label>
+                <input
+                  name="a"
+                  min={minVal}
+                  max={maxVal}
+                  onChange={onMinSliderChange}
+                  type="range"
+                  value={currentMinVal}
+                />
+                <input
+                  name="b"
+                  min={minVal}
+                  max={maxVal}
+                  className="b"
+                  onChange={onMaxSliderChange}
+                  type="range"
+                  value={currentMaxVal}
+                />
+                <label className="labelb" htmlFor="b">
+                  {currentMaxVal}
+                </label>
+                <button className="apply" onClick={apply}>
+                  Apply
+                </button>
+              </span>
+            </div>
             <div className="product-list">
               {products.map((product) => (
                 <div
