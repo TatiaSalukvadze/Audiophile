@@ -1,3 +1,4 @@
+"use client";
 import { useRef, useState, useEffect } from "react";
 import logo from "../../../public/assets/shared/desktop/logo.svg";
 import cart from "../../../public/assets/shared/desktop/icon-cart.svg";

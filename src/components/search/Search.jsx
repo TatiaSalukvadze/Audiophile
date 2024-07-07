@@ -1,3 +1,4 @@
+"use client";
 import { useRouter } from "next/navigation";
 import { useRef, useContext, useEffect } from "react";
 import search from "../../../public/assets/shared/desktop/icon-search.svg";

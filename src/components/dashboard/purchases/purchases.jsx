@@ -3,7 +3,7 @@ import "./purchases.css";
 import products from "../../../data.json";
 
 const Purchases = ({ orders, users }) => {
-  const latest = orders.length <= 10 ? orders : orders.slice(0, 10);
+  const latest = orders.length <= 5 ? orders : orders.slice(0, 5);
 
   return (
     <div className="purchases">
