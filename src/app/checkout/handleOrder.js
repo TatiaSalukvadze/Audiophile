@@ -31,7 +31,7 @@ export async function sendOrderConfirmation(email, orderDetails, grandTotal) {
           (total, item) => total + item.price * item.count,
           0
         )}</p>
-        <p>Grand Total: ${grandTotal}</p>
+        <p>Grand Total: $${grandTotal}</p>
       `,
     });
 

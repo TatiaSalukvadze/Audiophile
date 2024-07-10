@@ -10,11 +10,36 @@ import "swiper/css/autoplay"; // Ensure you have imported autoplay CSS
 import productData from "../../../../data.json";
 import "./swiperc.css";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { MyContext } from "../../../../context/MyContext";
 
 function SwiperC() {
-  const { imageSrcKey } = useContext(MyContext);
+  // const { imageSrcKey } = useContext(MyContext);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 800
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  let imageSrcKey = "desktop";
+
+  if (windowWidth <= 768) {
+    imageSrcKey = "tablet";
+  }
+  if (windowWidth <= 476) {
+    imageSrcKey = "mobile";
+  }
+
   return (
     <div className="mainwrap swiper">
       <h1>

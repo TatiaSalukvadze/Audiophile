@@ -51,6 +51,12 @@
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+.addcart:disabled {
+    background-color: grey;
+    /* Example: change background color */
+    cursor: not-allowed;
+    /* Example: change cursor */
+}
 .cartbs{
     display:flex;
     gap:0px;
@@ -62,6 +68,10 @@
 
 .cartb .mas {
     color: #D87D4A;
+}
+
+.productim img{
+    width:100%;
 }
 @media(max-width:950px) {
     .quant {

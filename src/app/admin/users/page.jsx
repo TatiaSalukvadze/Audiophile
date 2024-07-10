@@ -12,7 +12,7 @@ export default async function UsersWrap() {
     redirect("/home");
   }
 
-  const users = await Users();
+  // const users = await Users();
 
-  return <InsideUser gotusers={users} />;
+  return <InsideUser />;
 }

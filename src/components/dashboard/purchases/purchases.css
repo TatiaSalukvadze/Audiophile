@@ -10,6 +10,17 @@
     margin-bottom: 20px;
     font-weight: 200;
 } */
+.tablewrap {
+    overflow-x: auto;
+}
+.purchases ::-webkit-scrollbar {
+    height: 10px;
+}
+
+.purchases ::-webkit-scrollbar-thumb {
+    background: #383838;
+    border-radius: 10px;
+}
 
 .trtable {
     width: 100%;

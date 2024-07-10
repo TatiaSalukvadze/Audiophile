@@ -15,6 +15,7 @@ function Checkout() {
   const [summ, setsumm] = useState([0, 0, 0, 0]);
   const [showFinal, setShowFinal] = useState(false);
   const email = useRef(null);
+  const [disabledB, setdisabledB] = useState(false);
 
   useEffect(() => {
     let t = cartList.reduce((tot, c) => tot + c.price * c.count, 0);
@@ -26,6 +27,7 @@ function Checkout() {
 
   const onSubmit = async () => {
     try {
+      setdisabledB(true);
       await Promise.all(
         cartList.map(async (or) => {
           await deleteCartItem(or.id);
@@ -365,6 +367,7 @@ function Checkout() {
                 form="my-form"
                 className="pay"
                 onClick={handleSubmit(onSubmit)}
+                disabled={disabledB}
               >
                 Continue & pay
               </button>

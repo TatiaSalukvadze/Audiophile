@@ -1,8 +1,7 @@
 import "./gallery.css";
-// import ReactFancyBox from "react-fancybox";
-// import "react-fancybox/lib/fancybox.css";
 import Fancybox from "./Fancybox";
-function Gallery({ p, imageSrcKey }) {
+
+function Gallery({ p }) {
   return (
     <Fancybox
       options={{
@@ -15,35 +14,65 @@ function Gallery({ p, imageSrcKey }) {
         <div id="inner">
           <a
             data-fancybox="gallery"
-            href={p.gallery.first[imageSrcKey]}
+            href={p.gallery.first.desktop}
             className="pg1"
             title="Click to Open Picture"
           >
-            <img src={p.gallery.first[imageSrcKey]} alt="" />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcSet={p.gallery.first.tablet}
+              />
+              <source
+                media="(max-width: 476px)"
+                srcSet={p.gallery.first.mobile}
+              />
+              <img src={p.gallery.first.desktop} alt="product" />
+            </picture>
+
+            {/* <img src={p.gallery.first.mobile} alt="" /> */}
           </a>
           <a
             data-fancybox="gallery"
-            href={p.gallery.second[imageSrcKey]}
+            href={p.gallery.second.desktop}
             className="pg2"
             title="Click to Open Picture"
           >
-            <img src={p.gallery.second[imageSrcKey]} alt="" />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcSet={p.gallery.second.tablet}
+              />
+              <source
+                media="(max-width: 476px)"
+                srcSet={p.gallery.second.mobile}
+              />
+              <img src={p.gallery.second.desktop} alt="product" />
+            </picture>
+
+            {/* <img src={p.gallery.second.mobile} alt="" /> */}
           </a>
         </div>
         <a
           data-fancybox="gallery"
-          href={p.gallery.third[imageSrcKey]}
+          href={p.gallery.third.desktop}
           className="pg3"
           title="Click to Open Picture"
         >
-          <img src={p.gallery.third[imageSrcKey]} alt="" />
-        </a>
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet={p.gallery.third.tablet}
+            />
+            <source
+              media="(max-width: 476px)"
+              srcSet={p.gallery.third.mobile}
+            />
+            <img src={p.gallery.third.desktop} alt="product" />
+          </picture>
 
-        {/* <div id="inner">
-        <img src={p.gallery.first[imageSrcKey]} alt="" className="pg1" />
-        <img src={p.gallery.second[imageSrcKey]} alt="" className="pg2" />
-      </div>
-      <img src={p.gallery.third[imageSrcKey]} alt="" className="pg3" /> */}
+          {/* <img src={p.gallery.third.mobile} alt="" /> */}
+        </a>
       </div>
     </Fancybox>
   );

@@ -87,7 +87,7 @@
 
 /* The Modal (background) */
 .modal {
-    display: none;
+    display: block;
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
@@ -109,10 +109,15 @@
 .modal-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto;
-
+    color:black;
     border: 1px solid #888;
     width: 80%;
 
+}
+.modal-content h1,.modal-content p {
+    padding-bottom: 20px;
+
+    color: black;
 }
 
 /* Style the horizontal ruler */

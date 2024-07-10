@@ -171,7 +171,12 @@ input[type="radio"] {
     letter-spacing: 1px;
     text-transform: uppercase;
 } */
-
+.pay:disabled {
+    background-color: grey;
+    /* Example: change background color */
+    cursor: not-allowed;
+    /* Example: change cursor */
+}
 .errors {
     color: #c35616;
     font-size: 13px;

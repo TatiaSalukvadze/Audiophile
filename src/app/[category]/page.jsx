@@ -19,7 +19,7 @@ function Category({ params }) {
   const pathname = usePathname(); //window.location.pathname;
   const [sorting, setsorting] = useState(" ");
   const cat = params.category;
-  const { imageSrcKey } = useContext(MyContext);
+  // const { imageSrcKey } = useContext(MyContext);
   const [products, setproducts] = useState(
     productData.filter((product) => product.category === `${cat}`).reverse()
   );
@@ -115,11 +115,24 @@ function Category({ params }) {
                   className={`preview id${Number(product.id) % 2} mainwrap`}
                   key={product.id}
                 >
-                  <img
+                  <div className="productim listcatim">
+                    <picture>
+                      <source
+                        media="(max-width: 768px)"
+                        srcSet={product.categoryImage.tablet}
+                      />
+                      <source
+                        media="(max-width: 476px)"
+                        srcSet={product.categoryImage.mobile}
+                      />
+                      <img src={product.categoryImage.desktop} alt="product" />
+                    </picture>
+                  </div>
+                  {/* <img
                     src={product.categoryImage[imageSrcKey]}
                     alt=""
                     className="listcatim"
-                  />
+                  /> */}
                   <div className="info">
                     {product.new ? <p className="np">NEW PRODUCT</p> : <></>}
                     <h1 className="title">{product.name}</h1>
