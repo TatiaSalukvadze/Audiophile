@@ -27,7 +27,13 @@ function Gallery({ p }) {
                 media="(max-width: 476px)"
                 srcSet={p.gallery.first.mobile}
               />
-              <img src={p.gallery.first.desktop} alt="product" />
+              <img
+                src={p.gallery.first.desktop}
+                alt="product"
+                data-aos="fade-right"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="500"
+              />
             </picture>
 
             {/* <img src={p.gallery.first.mobile} alt="" /> */}
@@ -47,7 +53,13 @@ function Gallery({ p }) {
                 media="(max-width: 476px)"
                 srcSet={p.gallery.second.mobile}
               />
-              <img src={p.gallery.second.desktop} alt="product" />
+              <img
+                src={p.gallery.second.desktop}
+                alt="product"
+                data-aos="fade-right"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="500"
+              />
             </picture>
 
             {/* <img src={p.gallery.second.mobile} alt="" /> */}
@@ -68,7 +80,13 @@ function Gallery({ p }) {
               media="(max-width: 476px)"
               srcSet={p.gallery.third.mobile}
             />
-            <img src={p.gallery.third.desktop} alt="product" />
+            <img
+              src={p.gallery.third.desktop}
+              alt="product"
+              data-aos="fade-left"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="500"
+            />
           </picture>
 
           {/* <img src={p.gallery.third.mobile} alt="" /> */}

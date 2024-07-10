@@ -9,7 +9,13 @@ function Home() {
   return (
     <div className="home">
       <div className="homehead">
-        <div className="headdiv">
+        <div
+          className="headdiv"
+          data-aos="fade-right"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500"
+        >
           <p className="homenewp">NEW PRODUCT</p>
           <h1>XX99 Mark II Headphones</h1>
           <p className="homedesc">

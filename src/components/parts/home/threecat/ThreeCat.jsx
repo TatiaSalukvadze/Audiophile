@@ -8,7 +8,7 @@ import "./threecat.css";
 function ThreeCat() {
   return (
     <div className="threecat mainwrap">
-      <div className="p p1">
+      <div className="p p1" data-aos="zoom-in-right" data-aos-duration="500">
         <img src={p1.src} className="pimg" />
         <span className="alink">
           <h3>headphones</h3>
@@ -21,7 +21,7 @@ function ThreeCat() {
         </span>
       </div>
 
-      <div className="p p2">
+      <div className="p p2" data-aos="zoom-in-up" data-aos-duration="500">
         <img src={p2.src} className="pimg" />
 
         <span className="alink">
@@ -33,7 +33,7 @@ function ThreeCat() {
         </span>
       </div>
 
-      <div className="p p3">
+      <div className="p p3" data-aos="zoom-in-left" data-aos-duration="500">
         <img src={p3.src} className="pimg" />
         <span className="alink">
           <h3>earphones</h3>

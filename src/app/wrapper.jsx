@@ -7,6 +7,7 @@ import Footer from "../components/footer/Footer";
 import Search from "../components/search/Search";
 import ScrollToTop from "../components/ScrollToTop";
 import { auth } from "@clerk/nextjs/server";
+import { AOSInit } from "./aos";
 // import { ClerkProvider } from "@clerk/nextjs";
 // import InsideWrapper from "./insideWrapper";
 
@@ -25,6 +26,7 @@ export default async function Wrapper({ children }) {
     // <ClerkProvider frontendApi={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
     <html lang="en">
       <MyProvider>
+        <AOSInit />
         <body>
           <ScrollToTop />
           <Nav role={role} />

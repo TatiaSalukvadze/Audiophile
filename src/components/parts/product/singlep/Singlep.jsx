@@ -60,7 +60,11 @@ function Singlep({ p }) {
         </picture>
       </div>
       {/* <img src={p.image[imageSrcKey]} alt="pruduct" className="productim" /> */}
-      <div className="info calkep">
+      <div
+        className="info calkep"
+        data-aos="fade-down-left"
+        data-aos-duration="500"
+      >
         {p.new ? <p className="np">NEW PRODUCT</p> : <></>}
         <h1 className="title">{p.name}</h1>
         <p className="pr-desc">{p.description}</p>

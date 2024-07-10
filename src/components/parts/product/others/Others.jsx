@@ -20,7 +20,7 @@ function Others({ items }) {
         {items.map((it) => {
           const cat = data.find((el) => el.slug === it.slug).category;
           return (
-            <div className="o">
+            <div className="o" data-aos="zoom-in-up" data-aos-duration="500">
               <picture>
                 <source media="(max-width: 768px)" srcSet={it.image.tablet} />
                 <source media="(max-width: 476px)" srcSet={it.image.mobile} />

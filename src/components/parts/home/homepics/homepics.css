@@ -186,6 +186,10 @@
         margin-top: 64px;
         text-align: center;
     }
+        .blb{
+            margin-left:auto;
+            margin-right:auto;
+        }
 }
 
 @media (max-width: 768px) {

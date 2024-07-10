@@ -6,7 +6,12 @@ function Homepics() {
     <div className="homepics mainwrap">
       <div className="hdiv1">
         <div className="hdiv1im"></div>
-        <div className="hdivtext">
+        <div
+          className="hdivtext"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          data-aos-duration="700"
+        >
           <h1>ZX9 SPEAKER</h1>
           <p>
             Upgrade to premium speakers that are phenomenally built to deliver
@@ -25,7 +30,11 @@ function Homepics() {
       </div>
 
       <div className="hdiv2">
-        <div>
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          data-aos-duration="700"
+        >
           <h2>ZX7 SPEAKER</h2>
           {/* <Link href="/headphones/zx7-speaker">
             <button className="seep trb">see product</button>
@@ -42,16 +51,22 @@ function Homepics() {
       <div className="hdiv3">
         <div className="im"></div>
         <div className="hdiv3d">
-          <h2>YX1 EARPHONES</h2>
-          {/* <Link href="/headphones/yx1-earphones">
+          <span
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-center"
+            data-aos-duration="700"
+          >
+            <h2>YX1 EARPHONES</h2>
+            {/* <Link href="/headphones/yx1-earphones">
             <button className="seep trb">see product</button>
           </Link> */}
-          <div className="seep trb button-container-1">
-            <span className="trb mas">See Product</span>
-            <Link href="/headphones/yx1-earphones">
-              <button className="trb">See Product</button>
-            </Link>
-          </div>
+            <div className="seep trb button-container-1">
+              <span className="trb mas">See Product</span>
+              <Link href="/headphones/yx1-earphones">
+                <button className="trb">See Product</button>
+              </Link>
+            </div>
+          </span>
         </div>
       </div>
     </div>

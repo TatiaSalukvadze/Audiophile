@@ -68,7 +68,9 @@ function Category({ params }) {
       {pathname === "/" + params.category && (
         <div>
           <div className="cat-header">
-            <h1>{cat}</h1>
+            <h1 data-aos="zoom-in-up" data-aos-duration="500">
+              {cat}
+            </h1>
           </div>
 
           <div className="cat-content">
@@ -133,7 +135,13 @@ function Category({ params }) {
                     alt=""
                     className="listcatim"
                   /> */}
-                  <div className="info">
+                  <div
+                    className="info"
+                    data-aos={`fade-down-${
+                      Number(product.id) % 2 === 0 ? "left" : "right"
+                    }`}
+                    data-aos-duration="500"
+                  >
                     {product.new ? <p className="np">NEW PRODUCT</p> : <></>}
                     <h1 className="title">{product.name}</h1>
                     <p className="pr-desc">{product.description}</p>
