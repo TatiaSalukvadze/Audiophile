@@ -1,38 +1,36 @@
-.admindiv{
-    background-color: #383838;
+.admindiv {
+  background-color: #383838;
 }
-.admin{
-    margin:0 auto;
-    padding-top:100px;
-    padding-bottom:100px;
+.admin {
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
-.cards{
-    display:flex;
-    column-gap:20px;
+.cards {
+  display: flex;
+  column-gap: 20px;
 }
-/* #users, #orders {
-    scroll-margin-top: 170px;
-   
-} */
-.barchartdiv,.purchases,.linechartdiv,.userorder {
 
-    background-color: #0E0E0E;
-    color: white;
-    padding:20px;
-    border-radius: 10px;
-    margin-top: 20px;
-
+.barchartdiv,
+.purchases,
+.linechartdiv,
+.userorder {
+  background-color: #0e0e0e;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 .adtitles {
-    margin-bottom: 20px;
-    font-weight: 200;
-    /* color: var(--textSoft); */
+  margin-bottom: 20px;
+  font-weight: 200;
+  /* color: var(--textSoft); */
 }
-.adtitles span{
-    color:#d87d4a;
+.adtitles span {
+  color: #d87d4a;
 }
-.loading{
-    font-weight: 500;
-    font-size:28px;
-    letter-spacing: 1.5px;
+.loading {
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: 1.5px;
 }

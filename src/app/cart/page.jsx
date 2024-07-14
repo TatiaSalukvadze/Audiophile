@@ -15,8 +15,8 @@ import data from "../../data.json";
 function Cart() {
   const { userId } = useAuth();
   const { cartList, setcartList } = useContext(MyContext);
-  // const [cartList, setcartList] = useState([]);
   const [total, settotal] = useState(0);
+
   useEffect(() => {
     async function startwith() {
       if (userId) {
@@ -128,12 +128,7 @@ function Cart() {
           <div className="checkoutb button-container-1">
             <span className="checkoutb mas">checkout</span>
             <Link href="/checkout">
-              <button
-              // className="check-button"
-              // onClick={() => setIsModalOpen(!isModalOpen)}
-              >
-                checkout
-              </button>
+              <button>checkout</button>
             </Link>
           </div>
         ) : (

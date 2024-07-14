@@ -1,5 +1,3 @@
-// "use client";
-
 import "./globals.css";
 import { MyProvider } from "../context/MyContext";
 import Nav from "../components/nav/Nav";
@@ -8,8 +6,6 @@ import Search from "../components/search/Search";
 import ScrollToTop from "../components/ScrollToTop";
 import { auth } from "@clerk/nextjs/server";
 import { AOSInit } from "./aos";
-// import { ClerkProvider } from "@clerk/nextjs";
-// import InsideWrapper from "./insideWrapper";
 
 async function getRole() {
   const { sessionClaims } = auth();
@@ -18,12 +14,9 @@ async function getRole() {
 }
 
 export default async function Wrapper({ children }) {
-  // const { sessionClaims } = auth();
   const role = await getRole();
-  // console.log(role);
+
   return (
-    // <InsideWrapper children={children} role={role} />
-    // <ClerkProvider frontendApi={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
     <html lang="en">
       <MyProvider>
         <AOSInit />
@@ -36,6 +29,5 @@ export default async function Wrapper({ children }) {
         </body>
       </MyProvider>
     </html>
-    // </ClerkProvider>
   );
 }

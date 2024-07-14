@@ -1,18 +1,17 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import logo from "../../../public/assets/shared/desktop/logo.svg";
 import cart from "../../../public/assets/shared/desktop/icon-cart.svg";
 import menu from "../../../public/assets/shared/tablet/icon-hamburger.svg";
 import close from "../../../public/assets/shared/tablet/icon-close.svg";
 import Link from "next/link";
-// import Cart from "../cart/Cart";
+
 import "./Nav.css";
 import { useAuth, UserButton } from "@clerk/nextjs";
 function Nav({ role }) {
   const { isSignedIn } = useAuth();
 
   const menuref = useRef(null);
-  // const [showcart, setshowcart] = useState(false);
 
   function showmenu() {
     menuref.current.classList.remove("hide");
@@ -109,14 +108,6 @@ function Nav({ role }) {
               Sign-In
             </Link>
           )}
-
-          {/* {isModalOpen && (
-            <Cart
-              isModalOpen={isModalOpen}
-              setIsModalOpen={setIsModalOpen}
-              modalRef={modalRef}
-            />
-          )} */}
         </span>
       </div>
     </div>

@@ -10,11 +10,9 @@ import "swiper/css/autoplay"; // Ensure you have imported autoplay CSS
 import productData from "../../../../data.json";
 import "./swiperc.css";
 import Link from "next/link";
-import { useContext, useState, useEffect } from "react";
-import { MyContext } from "../../../../context/MyContext";
+import { useState, useEffect } from "react";
 
 function SwiperC() {
-  // const { imageSrcKey } = useContext(MyContext);
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 800
   );
@@ -50,9 +48,6 @@ function SwiperC() {
         slidesPerView={
           imageSrcKey == "desktop" ? 4 : imageSrcKey == "tablet" ? 3 : 2
         }
-        //   effect="cube"
-        //   pagination={{ clickable: true }}
-        //   centeredSlides={true}
         loop={true}
         autoplay={{
           delay: 3000,

@@ -11,7 +11,6 @@ function deleteModal({ thing, delThing, current, setshowModal }) {
         !insidemodal.current.contains(event.target)
       ) {
         setshowModal(false);
-        // modal.current.style.display = "none";
       }
     };
     document.addEventListener("mousedown", handleOutsideClick);

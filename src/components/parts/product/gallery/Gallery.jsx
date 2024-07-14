@@ -35,8 +35,6 @@ function Gallery({ p }) {
                 data-aos-duration="500"
               />
             </picture>
-
-            {/* <img src={p.gallery.first.mobile} alt="" /> */}
           </a>
           <a
             data-fancybox="gallery"
@@ -61,8 +59,6 @@ function Gallery({ p }) {
                 data-aos-duration="500"
               />
             </picture>
-
-            {/* <img src={p.gallery.second.mobile} alt="" /> */}
           </a>
         </div>
         <a
@@ -88,8 +84,6 @@ function Gallery({ p }) {
               data-aos-duration="500"
             />
           </picture>
-
-          {/* <img src={p.gallery.third.mobile} alt="" /> */}
         </a>
       </div>
     </Fancybox>

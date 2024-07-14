@@ -38,8 +38,6 @@ function lineChart({ users }) {
         weekStart.setDate(today.getDate() - (i + 1) * 7); // Calculate start of the week
         const weekEnd = new Date(today);
         weekEnd.setDate(today.getDate() - i * 7); // Calculate end of the week
-        // console.log("start", weekStart);
-        // console.log("end", weekEnd);
         filteredUsers.forEach((user) => {
           const userDate = new Date(user.createdAt);
           if (userDate >= weekStart && userDate < weekEnd) {
@@ -50,7 +48,6 @@ function lineChart({ users }) {
       setdata(weeklyCounts);
     }
     startWith();
-    // console.log(startWith());
   }, []);
   if (!isMounted) {
     return null;
@@ -64,8 +61,6 @@ function lineChart({ users }) {
       <ResponsiveContainer width="100%" height="90%">
         <LineChart
           className="linechart"
-          //   width={500}
-          //   height={300}
           data={data}
           margin={{
             top: 5,
@@ -85,7 +80,6 @@ function lineChart({ users }) {
             stroke="#8884d8"
             activeDot={{ r: 8 }}
           />
-          {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
         </LineChart>
       </ResponsiveContainer>
     </div>

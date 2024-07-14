@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
 import { MyContext } from "../../context/MyContext";
 import "./searchRes.css";
 import oval from "../../../public/assets/shared/desktop/Oval.svg";
@@ -25,12 +25,6 @@ function page() {
           {searchResults.map((el) => (
             <Link href={`/${el.category}/${el.slug}`}>
               <div className="sProduct" key={el.name}>
-                {/* <div
-                className="absolute top-[10px] right-[10px] p-[10px] bg-[#10141E] rounded-full opacity-70"
-                onClick={() => update(el)}
-              >
-                <img src={el.isBookmarked ? bfull : bempty} className="" />
-              </div> */}
                 <img src={el.image.mobile} id="sPimg" />
                 <p>
                   {el.category} &nbsp; <img src={oval.src} /> &nbsp;{" "}

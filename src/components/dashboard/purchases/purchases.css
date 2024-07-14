@@ -1,15 +1,4 @@
-/* .purchases {
-    background-color: #0E0E0E;
-        color: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top:20px;
-} */
-/* 
-.adtitles {
-    margin-bottom: 20px;
-    font-weight: 200;
-} */
+
 .tablewrap {
     overflow-x: auto;
 }
@@ -48,14 +37,3 @@
     color: white;
 }
 
-/* .pending {
-    background-color: #f7cb7375;
-}
-
-.done {
-    background-color: #afd6ee75;
-}
-
-.cancelled {
-    background-color: #f7737375;
-} */

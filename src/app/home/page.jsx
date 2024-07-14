@@ -28,9 +28,6 @@ function Home() {
               <button>See Product</button>
             </Link>
           </div>
-          {/* <Link href="/headphones/xx99-mark-two-headphones">
-            <button>See Product</button>
-          </Link> */}
         </div>
       </div>
       <ThreeCat />

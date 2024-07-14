@@ -5,15 +5,12 @@ import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 function page() {
   const { sessionClaims } = auth();
-  // const router = useRouter();
   if (sessionClaims?.metadata.role !== "admin") {
     redirect("/home");
   } else {
     redirect("/admin/dashboard");
   }
-  // useEffect(() => {
-  //   router.push("/home");
-  // }, []);
+
   return <>{/* <Home /> */}</>;
 }
 

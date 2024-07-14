@@ -1,7 +1,6 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
-import { Users } from "../actions";
 import InsideUser from "./insideUser";
 
 export default async function UsersWrap() {
@@ -11,8 +10,6 @@ export default async function UsersWrap() {
   if (sessionClaims?.metadata.role !== "admin") {
     redirect("/home");
   }
-
-  // const users = await Users();
 
   return <InsideUser />;
 }

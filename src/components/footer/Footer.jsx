@@ -34,7 +34,7 @@ function Footer() {
         facility - we’re open 7 days a week.
       </p>
       <div className="bottom">
-        <p className="copyr">Copyright 2021. All Rights Reserved</p>
+        <p className="copyr">Copyright 2024. All Rights Reserved</p>
         <div className="icons">
           <span>
             <img src={fb.src} alt="icon" className="icon" />

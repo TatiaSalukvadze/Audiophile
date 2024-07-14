@@ -1,4 +1,3 @@
-import Image from "next/image";
 import "./purchases.css";
 import products from "../../../data.json";
 

@@ -8,7 +8,7 @@ import { deleteCartItem, createOrder } from "../../db/queries";
 import { sendOrderConfirmation } from "./handleOrder";
 
 function Checkout() {
-  const { cartList, setcartList } = useContext(MyContext);
+  const { cartList } = useContext(MyContext);
   const { control, handleSubmit, formState } = useForm();
   const { errors } = formState;
   const [selectedPayment, setSelectedPayment] = useState("e-money");
@@ -354,13 +354,6 @@ function Checkout() {
               </span>
             </div>
 
-            {/* <button
-              form="my-form"
-              className="pay"
-              onClick={handleSubmit(onSubmit)}
-            >
-              Continue & pay
-            </button> */}
             <div className="payb button-container-1">
               <span className="payb mas">Continue & pay</span>
               <button
