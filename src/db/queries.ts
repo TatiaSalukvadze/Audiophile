@@ -4,7 +4,12 @@ import { InsertCartItem, cartTable, SelectCartItem, orderTable, InsertOrder, Sel
 import { eq, sql,desc } from 'drizzle-orm';
 
 export async function createCartItem(data: InsertCartItem) {
-  await db.insert(cartTable).values(data);
+  // await db.insert(cartTable).values(data);
+  const [insertedItem] = await db.insert(cartTable)
+    .values(data)
+    .returning({ id: cartTable.id }); 
+
+  return insertedItem.id;
 }
 export async function createOrder(data: InsertOrder) {
   await db.insert(orderTable).values(data);

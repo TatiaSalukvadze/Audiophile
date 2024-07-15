@@ -33,12 +33,22 @@ function addToCart({ pid }) {
 
   function AddToCart() {
     setdisabledB(true);
+    console.log(count);
     if (count <= 0) return;
 
     if (isNew) {
-      createCartItem({ userId: userId, productId: pid, count: count });
-      setisNew(false);
+      createCartItem({ userId: userId, productId: pid, count: count })
+        .then((newOrderId) => {
+          setorderId(newOrderId);
+          setisNew(false);
+        })
+        .catch((error) => {
+          console.error("Error creating cart item:", error);
+          setdisabledB(false); // Re-enable button if there's an error
+        });
+      // setisNew(false);
     } else {
+      console.log(count);
       updateCartItem(orderId, {
         userId: userId,
         productId: pid,
