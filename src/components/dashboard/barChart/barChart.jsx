@@ -25,10 +25,10 @@ export default function barChart({ orders, cart }) {
         d[`${p.id}`] = { id: p.id, name: p.shortName, cart: 0, order: 0 };
       });
       orders.forEach((o) => {
-        if (d[o.productId]) d[o.productId].order += 1;
+        if (d[o.productId]) d[o.productId].order += o.count;
       });
       cart.forEach((c) => {
-        if (d[c.productId]) d[c.productId].cart += 1;
+        if (d[c.productId]) d[c.productId].cart += c.count;
       });
       return Object.values(d);
     }
