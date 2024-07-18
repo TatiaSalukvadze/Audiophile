@@ -85,12 +85,20 @@ function Cart() {
     setcartList(updCart);
   };
 
+  const deleteAll = () => {
+    const tcart = cartList;
+    tcart.forEach((el) => {
+      deleteCartItem(el.id);
+    });
+    setcartList([]);
+  };
+
   return (
     <div className="bg">
       <div className="cart-comp">
         <div className="cart-header">
           <h3>Cart ({cartList.length})</h3>
-          <h4 onClick={() => setcartList([])} style={{ cursor: "pointer" }}>
+          <h4 onClick={() => deleteAll()} style={{ cursor: "pointer" }}>
             Remove All
           </h4>
         </div>
