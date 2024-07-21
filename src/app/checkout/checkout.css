@@ -63,7 +63,7 @@
   padding-left: 24px;
 }
 
-::placeholder {
+.Checkout::placeholder {
   color: #000;
   opacity: 0.4;
   font-family: "Manrope", sans-serif;
